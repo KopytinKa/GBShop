@@ -62,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(error.localizedDescription)
             }
         }
-        
+
         let catalog = requestFactory.makeCatalogRequestFactory()
         catalog.getCatalog(pageNumber: 1, idCategory: 1) { response in
             switch response.result {
