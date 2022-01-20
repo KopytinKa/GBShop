@@ -217,4 +217,65 @@ class ResponseCodableTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
+    
+    func testAddToBasketAndParse() {
+        var parameters: Parameters? {
+            return [
+                "id_product": 1,
+                "quantity": 1
+            ]
+        }
+        
+        AF
+            .request("https://afternoon-ravine-72981.herokuapp.com/addToBasket", method: .post, parameters: parameters)
+            .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<AddToBasketResult>) in
+                switch response.result {
+                case .success(_): break
+                case .failure:
+                    XCTFail()
+                }
+                self?.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
+    func testDeleteFromBasketAndParse() {
+        var parameters: Parameters? {
+            return [
+                "id_product": 1,
+            ]
+        }
+        
+        AF
+            .request("https://afternoon-ravine-72981.herokuapp.com/deleteFromBasket", method: .post, parameters: parameters)
+            .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<DeleteFromBasketResult>) in
+                switch response.result {
+                case .success(_): break
+                case .failure:
+                    XCTFail()
+                }
+                self?.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
+    func testPayBasketAndParse() {
+        var parameters: Parameters? {
+            return [
+                "id_user": 1,
+            ]
+        }
+        
+        AF
+            .request("https://afternoon-ravine-72981.herokuapp.com/payBasket", method: .post, parameters: parameters)
+            .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<PayBasketResult>) in
+                switch response.result {
+                case .success(_): break
+                case .failure:
+                    XCTFail()
+                }
+                self?.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 10.0)
+    }
 }
