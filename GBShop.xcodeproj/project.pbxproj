@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		337F606DE8221CB5EF68B2A9 /* Pods_GBShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A98411D857350626A01CFC /* Pods_GBShopTests.framework */; };
 		4B3F26FEE1A73CB0895A1686 /* Pods_GBShop_GBShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E48DEC27938CA6FF4639CD83 /* Pods_GBShop_GBShopUITests.framework */; };
-		8B0062972768FD7F004800FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0062962768FD7F004800FD /* ViewController.swift */; };
+		8B0062972768FD7F004800FD /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0062962768FD7F004800FD /* AuthViewController.swift */; };
 		8B00629A2768FD7F004800FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B0062982768FD7F004800FD /* Main.storyboard */; };
 		8B00629C2768FD80004800FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B00629B2768FD80004800FD /* Assets.xcassets */; };
 		8B00629F2768FD80004800FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B00629D2768FD80004800FD /* LaunchScreen.storyboard */; };
@@ -63,6 +63,8 @@
 		8B6B5A482799C41D006D4876 /* PayBasketResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6B5A472799C41D006D4876 /* PayBasketResult.swift */; };
 		8B6B5A4B2799C491006D4876 /* PayBasketRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6B5A4A2799C491006D4876 /* PayBasketRequestFactory.swift */; };
 		8B6B5A4D2799C4A3006D4876 /* PayBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6B5A4C2799C4A3006D4876 /* PayBasket.swift */; };
+		8B6B5A4F279AF304006D4876 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6B5A4E279AF304006D4876 /* RegisterViewController.swift */; };
+		8B6B5A51279AF333006D4876 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6B5A50279AF333006D4876 /* ProfileViewController.swift */; };
 		D4B4EF0973BCB3327D003107 /* Pods_GBShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C81C6E192F9534881CCF502 /* Pods_GBShop.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,7 +94,7 @@
 		8B00628F2768FD7F004800FD /* GBShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B0062922768FD7F004800FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B0062942768FD7F004800FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8B0062962768FD7F004800FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8B0062962768FD7F004800FD /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		8B0062992768FD7F004800FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B00629B2768FD80004800FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B00629E2768FD80004800FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -147,6 +149,8 @@
 		8B6B5A472799C41D006D4876 /* PayBasketResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketResult.swift; sourceTree = "<group>"; };
 		8B6B5A4A2799C491006D4876 /* PayBasketRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketRequestFactory.swift; sourceTree = "<group>"; };
 		8B6B5A4C2799C4A3006D4876 /* PayBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasket.swift; sourceTree = "<group>"; };
+		8B6B5A4E279AF304006D4876 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		8B6B5A50279AF333006D4876 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		974E66D796E6818A45211231 /* Pods-GBShopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShopTests.release.xcconfig"; path = "Target Support Files/Pods-GBShopTests/Pods-GBShopTests.release.xcconfig"; sourceTree = "<group>"; };
 		D1E2119B282054F083292D78 /* Pods-GBShop-GBShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShop-GBShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-GBShop-GBShopUITests/Pods-GBShop-GBShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E48DEC27938CA6FF4639CD83 /* Pods_GBShop_GBShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBShop_GBShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -323,7 +327,9 @@
 			isa = PBXGroup;
 			children = (
 				8B496ABA2770CFF300A71F20 /* Network */,
-				8B0062962768FD7F004800FD /* ViewController.swift */,
+				8B0062962768FD7F004800FD /* AuthViewController.swift */,
+				8B6B5A4E279AF304006D4876 /* RegisterViewController.swift */,
+				8B6B5A50279AF333006D4876 /* ProfileViewController.swift */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -735,6 +741,7 @@
 			files = (
 				8B6B5A3B2799B5EE006D4876 /* DeleteFromBasketResult.swift in Sources */,
 				8B496AC82770D95100A71F20 /* ExitRequestFactory.swift in Sources */,
+				8B6B5A4F279AF304006D4876 /* RegisterViewController.swift in Sources */,
 				8B6B5A1D278F30BD006D4876 /* CatalogResult.swift in Sources */,
 				8B496AC02770D09A00A71F20 /* RequestFactory.swift in Sources */,
 				8B6B5A3327999775006D4876 /* ApproveReviewRequestFactory.swift in Sources */,
@@ -750,10 +757,11 @@
 				8B6B5A4D2799C4A3006D4876 /* PayBasket.swift in Sources */,
 				8B496AD02770E36A00A71F20 /* ChangeUserData.swift in Sources */,
 				8B496AD42770E77C00A71F20 /* RegisterUserRequestFactory.swift in Sources */,
-				8B0062972768FD7F004800FD /* ViewController.swift in Sources */,
+				8B0062972768FD7F004800FD /* AuthViewController.swift in Sources */,
 				8B6B5A1B278F2E3E006D4876 /* Catalog.swift in Sources */,
 				8B6B5A19278F2E36006D4876 /* CatalogRequestFactory.swift in Sources */,
 				8B496AB52770CF4E00A71F20 /* RequestRouter.swift in Sources */,
+				8B6B5A51279AF333006D4876 /* ProfileViewController.swift in Sources */,
 				8B6B5A422799B752006D4876 /* DeleteFromBasketRequestFactory.swift in Sources */,
 				8B6B5A272799959C006D4876 /* AddReviewResult.swift in Sources */,
 				8B496AB92770CF9600A71F20 /* User.swift in Sources */,
