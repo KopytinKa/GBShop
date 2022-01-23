@@ -259,7 +259,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Профиль" id="koR-e8-9Pi">
-                        <barButtonItem key="rightBarButtonItem" title="Выход" id="nTe-r9-jYc"/>
+                        <barButtonItem key="rightBarButtonItem" title="Выход" id="nTe-r9-jYc">
+                            <connections>
+                                <action selector="pressExitButton:" destination="Rha-E9-GNf" id="mgb-Tu-MlM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bioInput" destination="9I8-RP-yhc" id="GOC-Sn-NPb"/>
@@ -271,11 +275,50 @@
                         <outlet property="mailInput" destination="Lpi-pY-H4O" id="96J-c3-CiY"/>
                         <outlet property="passwordInput" destination="vxc-6D-jiN" id="2p6-qJ-KS0"/>
                         <outlet property="saveDataButton" destination="w7M-4S-nSp" id="TrY-RM-2MJ"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="fromProfileToAuth" modalPresentationStyle="fullScreen" id="FkS-8B-hxv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uq7-H4-Wg8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3026.0869565217395" y="54.910714285714285"/>
+        </scene>
+        <!--Каталог-->
+        <scene sceneID="i7N-r1-XiG">
+            <objects>
+                <viewController id="mEn-U9-mak" customClass="CatalogViewController" customModule="GBShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OwL-TR-g5b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kNF-sH-5xU">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1H1-1d-nh0">
+                                    <size key="itemSize" width="300" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8Ko-sN-SN9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kNF-sH-5xU" firstAttribute="top" secondItem="8Ko-sN-SN9" secondAttribute="top" id="6AA-35-CEa"/>
+                            <constraint firstItem="8Ko-sN-SN9" firstAttribute="trailing" secondItem="kNF-sH-5xU" secondAttribute="trailing" id="H6i-ke-Vp6"/>
+                            <constraint firstItem="kNF-sH-5xU" firstAttribute="leading" secondItem="8Ko-sN-SN9" secondAttribute="leading" id="ULO-5d-us9"/>
+                            <constraint firstItem="8Ko-sN-SN9" firstAttribute="bottom" secondItem="kNF-sH-5xU" secondAttribute="bottom" id="jiL-Qx-WSN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Каталог" id="GTT-KB-wah"/>
+                    <connections>
+                        <outlet property="catalogCollectionView" destination="kNF-sH-5xU" id="Ffw-BX-uJB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nDx-VM-QOo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3024.6376811594205" y="778.79464285714278"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="m65-St-m2u">
@@ -454,6 +497,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Kom-Wq-vNg" kind="relationship" relationship="viewControllers" id="WTQ-4J-ChF"/>
+                        <segue destination="GLB-3A-arE" kind="relationship" relationship="viewControllers" id="piN-rh-4Wn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eoY-hs-4Z5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -479,11 +523,31 @@
             </objects>
             <point key="canvasLocation" x="2115.9420289855075" y="54.910714285714285"/>
         </scene>
+        <!--Каталог-->
+        <scene sceneID="Wjl-SU-TEz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GLB-3A-arE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Каталог" image="book" catalog="system" id="dOm-Wz-m3E"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oyq-1U-8S3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mEn-U9-mak" kind="relationship" relationship="rootViewController" id="WIt-WG-tn0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AY9-AC-S0e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2114" y="778"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="pZa-9L-FbC"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="book" catalog="system" width="128" height="99"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

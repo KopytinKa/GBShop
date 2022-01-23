@@ -31,12 +31,15 @@ class ProfileViewController: UIViewController {
     
     private let requestFactory = RequestFactory()
     
+    let fromProfileToAuthSegueIdentifier = "fromProfileToAuth"
+    
+    
     @IBAction func pressChangeDataButton(_ sender: Any) {
-        unlockForm()
+        toggleForm()
     }
     
     @IBAction func pressCancelButton(_ sender: Any) {
-        lockForm()
+        toggleForm()
     }
     
     @IBAction func pressSaveDataButton(_ sender: Any) {
@@ -49,6 +52,22 @@ class ProfileViewController: UIViewController {
             checkResult(login: login, password: password, email: email, gender: selectedGender, creditCard: creditCard, bio: bio)
         } else {
             showError("Заполни все поля")
+        }
+    }
+    
+    @IBAction func pressExitButton(_ sender: Any) {
+        let exit = requestFactory.makeExitRequestFactory()
+        exit.logout(userId: Int.random(in: 0..<999)) { response in
+            switch response.result {
+            case .success(let exit):
+                if exit.result != 0 {
+                    self.performSegue(withIdentifier: self.fromProfileToAuthSegueIdentifier, sender: nil)
+                } else {
+                    print(exit.errorMessage ?? "Неизвестная ошибка")
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
     }
     
@@ -67,7 +86,7 @@ class ProfileViewController: UIViewController {
             switch response.result {
             case .success(let changeData):
                 if changeData.result != 0 {
-                    self.lockForm()
+                    self.toggleForm()
                 } else {
                     self.showError(changeData.errorMessage ?? "Введены неверные данные")
                 }
@@ -77,37 +96,16 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    func showError(_ error: String) {
-        let alert = UIAlertController(title: "Ошибка", message: error, preferredStyle: .alert)
-        let action = UIAlertAction(title: "ОК", style: .cancel, handler: nil)
+    func toggleForm() {
+        self.changeDataButton.isHidden.toggle()
+        self.cancelButton.isHidden.toggle()
+        self.saveDataButton.isHidden.toggle()
         
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func lockForm() {
-        self.changeDataButton.isHidden = false
-        self.cancelButton.isHidden = true
-        self.saveDataButton.isHidden = true
-        
-        self.loginInput.isEnabled = false
-        self.passwordInput.isEnabled = false
-        self.mailInput.isEnabled = false
-        self.genderInput.isEnabled = false
-        self.cardInput.isEnabled = false
-        self.bioInput.isEditable = false
-    }
-    
-    func unlockForm() {
-        self.changeDataButton.isHidden = true
-        self.cancelButton.isHidden = false
-        self.saveDataButton.isHidden = false
-        
-        self.loginInput.isEnabled = true
-        self.passwordInput.isEnabled = true
-        self.mailInput.isEnabled = true
-        self.genderInput.isEnabled = true
-        self.cardInput.isEnabled = true
-        self.bioInput.isEditable = true
+        self.loginInput.isEnabled.toggle()
+        self.passwordInput.isEnabled.toggle()
+        self.mailInput.isEnabled.toggle()
+        self.genderInput.isEnabled.toggle()
+        self.cardInput.isEnabled.toggle()
+        self.bioInput.isEditable.toggle()
     }
 }
