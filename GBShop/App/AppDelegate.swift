@@ -32,16 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                print(error.localizedDescription)
 //            }
 //        }
-//
-//        let catalog = requestFactory.makeCatalogRequestFactory()
-//        catalog.getCatalog(pageNumber: 1, idCategory: 1) { response in
-//            switch response.result {
-//            case .success(let id):
-//                print(id)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
 //        
 //        let addReview = requestFactory.makeAddReviewRequestFactory()
 //        addReview.addReview(idUser: 123, text: "sdfsdfsf") { response in

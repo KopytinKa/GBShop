@@ -65,6 +65,10 @@
 		8B6B5A4D2799C4A3006D4876 /* PayBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6B5A4C2799C4A3006D4876 /* PayBasket.swift */; };
 		8B6B5A4F279AF304006D4876 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6B5A4E279AF304006D4876 /* RegisterViewController.swift */; };
 		8B6B5A51279AF333006D4876 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6B5A50279AF333006D4876 /* ProfileViewController.swift */; };
+		8B6B5A53279D7798006D4876 /* UIVIewController+ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6B5A52279D7798006D4876 /* UIVIewController+ShowError.swift */; };
+		8B6B5A55279D7C4D006D4876 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6B5A54279D7C4D006D4876 /* CatalogViewController.swift */; };
+		8B6B5A5A279D9C15006D4876 /* CatalogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6B5A58279D9C15006D4876 /* CatalogCollectionViewCell.swift */; };
+		8B6B5A5B279D9C15006D4876 /* CatalogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B6B5A59279D9C15006D4876 /* CatalogCollectionViewCell.xib */; };
 		D4B4EF0973BCB3327D003107 /* Pods_GBShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C81C6E192F9534881CCF502 /* Pods_GBShop.framework */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +155,10 @@
 		8B6B5A4C2799C4A3006D4876 /* PayBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasket.swift; sourceTree = "<group>"; };
 		8B6B5A4E279AF304006D4876 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8B6B5A50279AF333006D4876 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8B6B5A52279D7798006D4876 /* UIVIewController+ShowError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+ShowError.swift"; sourceTree = "<group>"; };
+		8B6B5A54279D7C4D006D4876 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		8B6B5A58279D9C15006D4876 /* CatalogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCollectionViewCell.swift; sourceTree = "<group>"; };
+		8B6B5A59279D9C15006D4876 /* CatalogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatalogCollectionViewCell.xib; sourceTree = "<group>"; };
 		974E66D796E6818A45211231 /* Pods-GBShopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShopTests.release.xcconfig"; path = "Target Support Files/Pods-GBShopTests/Pods-GBShopTests.release.xcconfig"; sourceTree = "<group>"; };
 		D1E2119B282054F083292D78 /* Pods-GBShop-GBShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShop-GBShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-GBShop-GBShopUITests/Pods-GBShop-GBShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E48DEC27938CA6FF4639CD83 /* Pods_GBShop_GBShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBShop_GBShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -330,6 +338,10 @@
 				8B0062962768FD7F004800FD /* AuthViewController.swift */,
 				8B6B5A4E279AF304006D4876 /* RegisterViewController.swift */,
 				8B6B5A50279AF333006D4876 /* ProfileViewController.swift */,
+				8B6B5A52279D7798006D4876 /* UIVIewController+ShowError.swift */,
+				8B6B5A54279D7C4D006D4876 /* CatalogViewController.swift */,
+				8B6B5A58279D9C15006D4876 /* CatalogCollectionViewCell.swift */,
+				8B6B5A59279D9C15006D4876 /* CatalogCollectionViewCell.xib */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -609,6 +621,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B6B5A5B279D9C15006D4876 /* CatalogCollectionViewCell.xib in Resources */,
 				8B00629F2768FD80004800FD /* LaunchScreen.storyboard in Resources */,
 				8B00629C2768FD80004800FD /* Assets.xcassets in Resources */,
 				8B00629A2768FD7F004800FD /* Main.storyboard in Resources */,
@@ -749,6 +762,7 @@
 				8B496AC42770D8C800A71F20 /* LogoutResult.swift in Sources */,
 				8B6B5A312799975B006D4876 /* ApproveReview.swift in Sources */,
 				8B6B5A15278F2CAC006D4876 /* ProductResult.swift in Sources */,
+				8B6B5A5A279D9C15006D4876 /* CatalogCollectionViewCell.swift in Sources */,
 				8B496AB72770CF7E00A71F20 /* LoginResult.swift in Sources */,
 				8B6B5A462799B76D006D4876 /* DeleteFromBasket.swift in Sources */,
 				8B496ACA2770E1CB00A71F20 /* RegisterResult.swift in Sources */,
@@ -767,6 +781,7 @@
 				8B496AB92770CF9600A71F20 /* User.swift in Sources */,
 				8B496ABE2770D06000A71F20 /* Auth.swift in Sources */,
 				8B6B5A2B279995B5006D4876 /* ApproveReviewResult.swift in Sources */,
+				8B6B5A55279D7C4D006D4876 /* CatalogViewController.swift in Sources */,
 				8B6B5A29279995A9006D4876 /* RemoveReviewResult.swift in Sources */,
 				8B6B5A1F279957EA006D4876 /* ProductModel.swift in Sources */,
 				8B6B5A392799B5E0006D4876 /* AddToBasketResult.swift in Sources */,
@@ -784,6 +799,7 @@
 				8B496AAF2770CE3C00A71F20 /* ErrorParser.swift in Sources */,
 				8B6B5A2D2799961B006D4876 /* RemoveReviewRequestFactory.swift in Sources */,
 				8B6B5A442799B75F006D4876 /* AddToBasket.swift in Sources */,
+				8B6B5A53279D7798006D4876 /* UIVIewController+ShowError.swift in Sources */,
 				8B496AB12770CEBB00A71F20 /* CustomDecodableSerializer.swift in Sources */,
 				8B496AAD2770CE0F00A71F20 /* AbstractErrorParser.swift in Sources */,
 				8B496AC62770D94000A71F20 /* Exit.swift in Sources */,
