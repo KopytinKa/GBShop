@@ -14,11 +14,21 @@ class CatalogViewController: UIViewController {
     
     let catalogCollectionViewCellIdentifier = "CatalogCollectionViewCellIdentifier"
     
+    let fromCatalogToProductDetailSegueIdentifier = "fromCatalogToProductDetail"
+    
     var products = [ProductModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.fetchData()
+        
+        self.catalogCollectionView.dataSource = self
+        self.catalogCollectionView.delegate = self
+        self.catalogCollectionView.register(UINib(nibName: "CatalogCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: catalogCollectionViewCellIdentifier)
+    }
+    
+    private func fetchData() {
         let catalog = requestFactory.makeCatalogRequestFactory()
         catalog.getCatalog(pageNumber: 1, idCategory: 1) { [weak self] response in
             guard let self = self else { return }
@@ -34,10 +44,15 @@ class CatalogViewController: UIViewController {
                 self.showError(error.localizedDescription)
             }
         }
-        
-        catalogCollectionView.dataSource = self
-        catalogCollectionView.delegate = self
-        catalogCollectionView.register(UINib(nibName: "CatalogCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: catalogCollectionViewCellIdentifier)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == self.fromCatalogToProductDetailSegueIdentifier {
+            guard let productDetailViewController = segue.destination as? ProductDetailViewController else { return }
+            guard let indexPath = sender as? IndexPath else { return }
+            
+            productDetailViewController.productId = products[indexPath.item].id
+        }
     }
 }
 
@@ -56,5 +71,9 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
         cell.configure(product: product)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: self.fromCatalogToProductDetailSegueIdentifier, sender: indexPath)
     }
 }

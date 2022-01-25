@@ -13,26 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let requestFactory = RequestFactory()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        let exit = requestFactory.makeExitRequestFactory()
-//        exit.logout(userId: 123) { response in
-//            switch response.result {
-//            case .success(let id):
-//                print(id)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//        
-//        let product = requestFactory.makeProductRequestFactory()
-//        product.getDataById(123) { response in
-//            switch response.result {
-//            case .success(let id):
-//                print(id)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//        
 //        let addReview = requestFactory.makeAddReviewRequestFactory()
 //        addReview.addReview(idUser: 123, text: "sdfsdfsf") { response in
 //            switch response.result {
