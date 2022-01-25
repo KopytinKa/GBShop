@@ -69,6 +69,7 @@
 		8B6B5A55279D7C4D006D4876 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6B5A54279D7C4D006D4876 /* CatalogViewController.swift */; };
 		8B6B5A5A279D9C15006D4876 /* CatalogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6B5A58279D9C15006D4876 /* CatalogCollectionViewCell.swift */; };
 		8B6B5A5B279D9C15006D4876 /* CatalogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B6B5A59279D9C15006D4876 /* CatalogCollectionViewCell.xib */; };
+		8B6B5A5D27A042A1006D4876 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6B5A5C27A042A1006D4876 /* ProductDetailViewController.swift */; };
 		D4B4EF0973BCB3327D003107 /* Pods_GBShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C81C6E192F9534881CCF502 /* Pods_GBShop.framework */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +160,7 @@
 		8B6B5A54279D7C4D006D4876 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		8B6B5A58279D9C15006D4876 /* CatalogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCollectionViewCell.swift; sourceTree = "<group>"; };
 		8B6B5A59279D9C15006D4876 /* CatalogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatalogCollectionViewCell.xib; sourceTree = "<group>"; };
+		8B6B5A5C27A042A1006D4876 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		974E66D796E6818A45211231 /* Pods-GBShopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShopTests.release.xcconfig"; path = "Target Support Files/Pods-GBShopTests/Pods-GBShopTests.release.xcconfig"; sourceTree = "<group>"; };
 		D1E2119B282054F083292D78 /* Pods-GBShop-GBShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShop-GBShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-GBShop-GBShopUITests/Pods-GBShop-GBShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E48DEC27938CA6FF4639CD83 /* Pods_GBShop_GBShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBShop_GBShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -340,6 +342,7 @@
 				8B6B5A50279AF333006D4876 /* ProfileViewController.swift */,
 				8B6B5A52279D7798006D4876 /* UIVIewController+ShowError.swift */,
 				8B6B5A54279D7C4D006D4876 /* CatalogViewController.swift */,
+				8B6B5A5C27A042A1006D4876 /* ProductDetailViewController.swift */,
 				8B6B5A58279D9C15006D4876 /* CatalogCollectionViewCell.swift */,
 				8B6B5A59279D9C15006D4876 /* CatalogCollectionViewCell.xib */,
 			);
@@ -763,6 +766,7 @@
 				8B6B5A312799975B006D4876 /* ApproveReview.swift in Sources */,
 				8B6B5A15278F2CAC006D4876 /* ProductResult.swift in Sources */,
 				8B6B5A5A279D9C15006D4876 /* CatalogCollectionViewCell.swift in Sources */,
+				8B6B5A5D27A042A1006D4876 /* ProductDetailViewController.swift in Sources */,
 				8B496AB72770CF7E00A71F20 /* LoginResult.swift in Sources */,
 				8B6B5A462799B76D006D4876 /* DeleteFromBasket.swift in Sources */,
 				8B496ACA2770E1CB00A71F20 /* RegisterResult.swift in Sources */,
