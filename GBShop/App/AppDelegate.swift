@@ -42,36 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                print(error.localizedDescription)
 //            }
 //        }
-//        
-//        let addToBasket = requestFactory.makeAddToBasketRequestFactory()
-//        addToBasket.addToBasket(idProduct: 1, quantity: 1) { response in
-//            switch response.result {
-//            case .success(let id):
-//                print(id)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//        
-//        let deleteFromBasket = requestFactory.makeDeleteFromBasketRequestFactory()
-//        deleteFromBasket.deleteFromBasket(idProduct: 1) { response in
-//            switch response.result {
-//            case .success(let id):
-//                print(id)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//        
-//        let payBasket = requestFactory.makePayBasketRequestFactory()
-//        payBasket.payBasket(idUser: 1) { response in
-//            switch response.result {
-//            case .success(let id):
-//                print(id)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
         
         return true
 

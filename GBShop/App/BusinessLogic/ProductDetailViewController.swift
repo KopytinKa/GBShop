@@ -25,7 +25,8 @@ class ProductDetailViewController: UIViewController {
     
     private func fetchData() {
         let product = requestFactory.makeProductRequestFactory()
-        product.getDataById(self.productId) { response in
+        product.getDataById(self.productId) { [weak self] response in
+            guard let self = self else { return }
             switch response.result {
             case .success(let product):
                 if product.result != 0 {
@@ -44,5 +45,22 @@ class ProductDetailViewController: UIViewController {
         self.priceLabel.text = String(self.product?.price ?? 0)
         self.descriptionLabel.text = self.product?.description
         self.nameLabel.text = self.product?.name
+    }
+    
+    @IBAction func pressAddToBasketButton(_ sender: Any) {
+        let addToBasket = requestFactory.makeAddToBasketRequestFactory()
+        addToBasket.addToBasket(idProduct: self.productId, quantity: 1) { [weak self] response in
+            guard let self = self else { return }
+            switch response.result {
+            case .success(let addBasketResult):
+                if addBasketResult.result != 0 {
+
+                } else {
+                    self.showError(addBasketResult.errorMessage ?? "Неизвестная ошибка")
+                }
+            case .failure(let error):
+                self.showError(error.localizedDescription)
+            }
+        }
     }
 }
