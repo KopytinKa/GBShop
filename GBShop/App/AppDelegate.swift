@@ -53,6 +53,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        let product = requestFactory.makeProductRequestFactory()
+        product.getDataById(123) { response in
+            switch response.result {
+            case .success(let id):
+                print(id)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        let catalog = requestFactory.makeCatalogRequestFactory()
+        catalog.getCatalog(pageNumber: 1, idCategory: 1) { response in
+            switch response.result {
+            case .success(let id):
+                print(id)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
         return true
 
     }
