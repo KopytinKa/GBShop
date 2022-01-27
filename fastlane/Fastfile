@@ -1,0 +1,41 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :custom_lane do
+
+    # checkout release branch
+#    ensure_git_status_clean
+
+    # clear data
+    clear_derived_data
+    xcclean(
+        scheme: "GBShop",
+        workspace: "GBShop.xcworkspace"
+    )
+
+    # update a dependencies
+    cocoapods(
+        use_bundle_exec: false
+    )
+
+    # run tests
+    run_tests
+
+  end
+
+#  lane :project do
+#    increment_build_number
+#
+#    gym(
+#      scheme: "GBShop",
+#      configuration: "Debug",
+#      export_method: "development",
+#      include_symbols: true,
+#      include_bitcode: true,
+#      silent: false
+#    )
+#
+#  end
+
+end
