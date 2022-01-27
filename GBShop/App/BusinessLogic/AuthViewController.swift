@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AuthViewController: UIViewController {
     @IBOutlet weak var loginInput: UITextField!
@@ -32,11 +33,15 @@ class AuthViewController: UIViewController {
             switch response.result {
             case .success(let login):
                 if login.result != 0 {
+                    Crashlytics.crashlytics().log("login success")
                     self.performSegue(withIdentifier: self.fromAuthToMainScreensSegueIdentifier, sender: nil)
                 } else {
-                    self.showError(login.errorMessage ?? "Введены неверные данные пользователя")
+                    let message = login.errorMessage ?? "Введены неверные данные пользователя"
+                    Crashlytics.crashlytics().log(message)
+                    self.showError(message)
                 }
             case .failure(let error):
+                Crashlytics.crashlytics().log(error.localizedDescription)
                 self.showError(error.localizedDescription)
             }
         }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -43,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            }
 //        }
         
+        FirebaseApp.configure()
+        Crashlytics.crashlytics().log("Aвфывфывфвфвывфы")
         return true
 
     }
