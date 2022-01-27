@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var loginInput: UITextField!
@@ -61,12 +62,13 @@ class ProfileViewController: UIViewController {
             switch response.result {
             case .success(let exit):
                 if exit.result != 0 {
+                    Crashlytics.crashlytics().log("logout success")
                     self.performSegue(withIdentifier: self.fromProfileToAuthSegueIdentifier, sender: nil)
                 } else {
-                    print(exit.errorMessage ?? "Неизвестная ошибка")
+                    Crashlytics.crashlytics().log(exit.errorMessage ?? "Неизвестная ошибка")
                 }
             case .failure(let error):
-                print(error.localizedDescription)
+                Crashlytics.crashlytics().log(error.localizedDescription)
             }
         }
     }
@@ -86,11 +88,15 @@ class ProfileViewController: UIViewController {
             switch response.result {
             case .success(let changeData):
                 if changeData.result != 0 {
+                    Crashlytics.crashlytics().log("change user data success")
                     self.toggleForm()
                 } else {
-                    self.showError(changeData.errorMessage ?? "Введены неверные данные")
+                    let message = changeData.errorMessage ?? "Введены неверные данные"
+                    Crashlytics.crashlytics().log(message)
+                    self.showError(message)
                 }
             case .failure(let error):
+                Crashlytics.crashlytics().log(error.localizedDescription)
                 self.showError(error.localizedDescription)
             }
         }

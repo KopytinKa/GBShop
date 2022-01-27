@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CatalogViewController: UIViewController {
     @IBOutlet weak var catalogCollectionView: UICollectionView!
@@ -35,12 +36,16 @@ class CatalogViewController: UIViewController {
             switch response.result {
             case .success(let catalog):
                 if catalog.result != 0 {
+                    Crashlytics.crashlytics().log("catalog data success")
                     self.products = catalog.products ?? []
                     self.catalogCollectionView.reloadData()
                 } else {
-                    self.showError(catalog.errorMessage ?? "Неизвестная ошибка")
+                    let message = catalog.errorMessage ?? "Неизвестная ошибка"
+                    Crashlytics.crashlytics().log(message)
+                    self.showError(message)
                 }
             case .failure(let error):
+                Crashlytics.crashlytics().log(error.localizedDescription)
                 self.showError(error.localizedDescription)
             }
         }
@@ -48,11 +53,22 @@ class CatalogViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == self.fromCatalogToProductDetailSegueIdentifier {
-            guard let productDetailViewController = segue.destination as? ProductDetailViewController else { return }
+            guard let productDetailViewController = segue.destination as? ProductDetailViewController else {
+                assertionFailure("Fatal error")
+                return
+            }
             guard let indexPath = sender as? IndexPath else { return }
             
             productDetailViewController.productId = products[indexPath.item].id
         }
+    }
+    
+    func assertionFailure(_ message: String) {
+        #if DEBUG
+            Swift.assertionFailure(message)
+        #else
+            Crashlytics.crashlytics().log(message)
+        #endif
     }
 }
 

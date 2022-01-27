@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController {
     @IBOutlet weak var loginInput: UITextField!
@@ -58,11 +59,15 @@ class RegisterViewController: UIViewController {
             switch response.result {
             case .success(let register):
                 if register.result != 0 {
+                    Crashlytics.crashlytics().log("register success")
                     self.performSegue(withIdentifier: self.fromRegisterToMainScreensSegueIdentifier, sender: nil)
                 } else {
-                    self.showError(register.errorMessage ?? "Введены неверные данные")
+                    let message = register.errorMessage ?? "Введены неверные данные"
+                    Crashlytics.crashlytics().log(message)
+                    self.showError(message)
                 }
             case .failure(let error):
+                Crashlytics.crashlytics().log(error.localizedDescription)
                 self.showError(error.localizedDescription)
             }
         }

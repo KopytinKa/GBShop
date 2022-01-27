@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProductDetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
@@ -30,12 +31,16 @@ class ProductDetailViewController: UIViewController {
             switch response.result {
             case .success(let product):
                 if product.result != 0 {
+                    Crashlytics.crashlytics().log("get product data success")
                     self.product = product.product
                     self.viewData()
                 } else {
-                    self.showError(product.errorMessage ?? "Неизвестная ошибка")
+                    let message = product.errorMessage ?? "Неизвестная ошибка"
+                    Crashlytics.crashlytics().log(message)
+                    self.showError(message)
                 }
             case .failure(let error):
+                Crashlytics.crashlytics().log(error.localizedDescription)
                 self.showError(error.localizedDescription)
             }
         }
@@ -54,11 +59,14 @@ class ProductDetailViewController: UIViewController {
             switch response.result {
             case .success(let addBasketResult):
                 if addBasketResult.result != 0 {
-
+                    Crashlytics.crashlytics().log("add to basket success")
                 } else {
-                    self.showError(addBasketResult.errorMessage ?? "Неизвестная ошибка")
+                    let message = addBasketResult.errorMessage ?? "Неизвестная ошибка"
+                    Crashlytics.crashlytics().log(message)
+                    self.showError(message)
                 }
             case .failure(let error):
+                Crashlytics.crashlytics().log(error.localizedDescription)
                 self.showError(error.localizedDescription)
             }
         }

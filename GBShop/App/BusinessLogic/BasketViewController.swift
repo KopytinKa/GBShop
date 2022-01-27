@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class BasketViewController: UIViewController {
     @IBOutlet weak var basketTableView: UITableView!
@@ -41,12 +42,16 @@ class BasketViewController: UIViewController {
             switch response.result {
             case .success(let payResult):
                 if payResult.result != 0 {
+                    Crashlytics.crashlytics().log("pay basket success")
                     self.products = []
                     self.basketTableView.reloadData()
                 } else {
-                    self.showError(payResult.errorMessage ?? "Неизвестная ошибка")
+                    let message = payResult.errorMessage ?? "Неизвестная ошибка"
+                    Crashlytics.crashlytics().log(message)
+                    self.showError(message)
                 }
             case .failure(let error):
+                Crashlytics.crashlytics().log(error.localizedDescription)
                 self.showError(error.localizedDescription)
             }
         }
