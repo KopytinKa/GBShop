@@ -35,7 +35,8 @@ class ResponseCodableTests: XCTestCase {
             .request("https://afternoon-ravine-72981.herokuapp.com/auth", method: .post, parameters: parameters)
             .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<LoginResult>) in
                 switch response.result {
-                case .success(_): break
+                case .success(let result):
+                    XCTAssertTrue(result.result == 1)
                 case .failure:
                     XCTFail()
                 }
@@ -55,7 +56,8 @@ class ResponseCodableTests: XCTestCase {
             .request("https://afternoon-ravine-72981.herokuapp.com/logout", method: .post, parameters: parameters)
             .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<LogoutResult>) in
                 switch response.result {
-                case .success(_): break
+                case .success(let result):
+                    XCTAssertTrue(result.result == 1)
                 case .failure:
                     XCTFail()
                 }
@@ -81,7 +83,8 @@ class ResponseCodableTests: XCTestCase {
             .request("https://afternoon-ravine-72981.herokuapp.com/register", method: .post, parameters: parameters)
             .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<RegisterResult>) in
                 switch response.result {
-                case .success(_): break
+                case .success(let result):
+                    XCTAssertTrue(result.result == 1)
                 case .failure:
                     XCTFail()
                 }
@@ -107,7 +110,8 @@ class ResponseCodableTests: XCTestCase {
             .request("https://afternoon-ravine-72981.herokuapp.com/changeUserData", method: .post, parameters: parameters)
             .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<ChangeUserDataResult>) in
                 switch response.result {
-                case .success(_): break
+                case .success(let result):
+                    XCTAssertTrue(result.result == 1)
                 case .failure:
                     XCTFail()
                 }
@@ -127,7 +131,8 @@ class ResponseCodableTests: XCTestCase {
             .request("https://afternoon-ravine-72981.herokuapp.com/getGoodById", method: .post, parameters: parameters)
             .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<ProductResult>) in
                 switch response.result {
-                case .success(_): break
+                case .success(let result):
+                    XCTAssertTrue(result.result == 1)
                 case .failure:
                     XCTFail()
                 }
@@ -148,7 +153,8 @@ class ResponseCodableTests: XCTestCase {
             .request("https://afternoon-ravine-72981.herokuapp.com/catalogData", method: .post, parameters: parameters)
             .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<CatalogResult>) in
                 switch response.result {
-                case .success(_): break
+                case .success(let result):
+                    XCTAssertTrue(result.result == 1)
                 case .failure:
                     XCTFail()
                 }
@@ -168,7 +174,8 @@ class ResponseCodableTests: XCTestCase {
             .request("https://afternoon-ravine-72981.herokuapp.com/removeReview", method: .post, parameters: parameters)
             .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<RemoveReviewResult>) in
                 switch response.result {
-                case .success(_): break
+                case .success(let result):
+                    XCTAssertTrue(result.result == 1)
                 case .failure:
                     XCTFail()
                 }
@@ -188,7 +195,8 @@ class ResponseCodableTests: XCTestCase {
             .request("https://afternoon-ravine-72981.herokuapp.com/approveReview", method: .post, parameters: parameters)
             .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<ApproveReviewResult>) in
                 switch response.result {
-                case .success(_): break
+                case .success(let result):
+                    XCTAssertTrue(result.result == 1)
                 case .failure:
                     XCTFail()
                 }
@@ -209,7 +217,8 @@ class ResponseCodableTests: XCTestCase {
             .request("https://afternoon-ravine-72981.herokuapp.com/addReview", method: .post, parameters: parameters)
             .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<AddReviewResult>) in
                 switch response.result {
-                case .success(_): break
+                case .success(let result):
+                    XCTAssertTrue(result.result == 1)
                 case .failure:
                     XCTFail()
                 }
@@ -230,7 +239,8 @@ class ResponseCodableTests: XCTestCase {
             .request("https://afternoon-ravine-72981.herokuapp.com/addToBasket", method: .post, parameters: parameters)
             .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<AddToBasketResult>) in
                 switch response.result {
-                case .success(_): break
+                case .success(let result):
+                    XCTAssertTrue(result.result == 1)
                 case .failure:
                     XCTFail()
                 }
@@ -250,7 +260,8 @@ class ResponseCodableTests: XCTestCase {
             .request("https://afternoon-ravine-72981.herokuapp.com/deleteFromBasket", method: .post, parameters: parameters)
             .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<DeleteFromBasketResult>) in
                 switch response.result {
-                case .success(_): break
+                case .success(let result):
+                    XCTAssertTrue(result.result == 1)
                 case .failure:
                     XCTFail()
                 }
@@ -270,7 +281,8 @@ class ResponseCodableTests: XCTestCase {
             .request("https://afternoon-ravine-72981.herokuapp.com/payBasket", method: .post, parameters: parameters)
             .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<PayBasketResult>) in
                 switch response.result {
-                case .success(_): break
+                case .success(let result):
+                    XCTAssertTrue(result.result == 1)
                 case .failure:
                     XCTFail()
                 }
