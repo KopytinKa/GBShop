@@ -10,7 +10,7 @@ import Alamofire
 @testable import GBShop
 
 class ResponseCodableTests: XCTestCase {
-    let expectation = XCTestExpectation(description: "Download https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")
+    let expectation = XCTestExpectation(description: "Download https://afternoon-ravine-72981.herokuapp.com/")
     var errorParser: ErrorParser!
 
     override func setUp() {
@@ -24,8 +24,15 @@ class ResponseCodableTests: XCTestCase {
     }
     
     func testAuthAndParse() {
+        var parameters: Parameters? {
+            return [
+                "username": "dsfsfs",
+                "password": "password"
+            ]
+        }
+        
         AF
-            .request("https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/login.json")
+            .request("https://afternoon-ravine-72981.herokuapp.com/auth", method: .post, parameters: parameters)
             .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<LoginResult>) in
                 switch response.result {
                 case .success(_): break
@@ -38,8 +45,14 @@ class ResponseCodableTests: XCTestCase {
     }
     
     func testExitAndParse() {
+        var parameters: Parameters? {
+            return [
+                "id_user": 123
+            ]
+        }
+        
         AF
-            .request("https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/logout.json")
+            .request("https://afternoon-ravine-72981.herokuapp.com/logout", method: .post, parameters: parameters)
             .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<LogoutResult>) in
                 switch response.result {
                 case .success(_): break
@@ -52,8 +65,20 @@ class ResponseCodableTests: XCTestCase {
     }
     
     func testRegisterUserAndParse() {
+        var parameters: Parameters? {
+            return [
+                "id_user": 123,
+                "username": "login",
+                "password": "password",
+                "email": "email",
+                "gender": "m",
+                "credit_card": "creditCard",
+                "bio": "bio"
+            ]
+        }
+        
         AF
-            .request("https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/registerUser.json")
+            .request("https://afternoon-ravine-72981.herokuapp.com/register", method: .post, parameters: parameters)
             .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<RegisterResult>) in
                 switch response.result {
                 case .success(_): break
@@ -66,8 +91,20 @@ class ResponseCodableTests: XCTestCase {
     }
     
     func testChangeUserDataAndParse() {
+        var parameters: Parameters? {
+            return [
+                "id_user": 123,
+                "username": "login",
+                "password": "password",
+                "email": "email",
+                "gender": "m",
+                "credit_card": "creditCard",
+                "bio": "bio"
+            ]
+        }
+        
         AF
-            .request("https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/changeUserData.json")
+            .request("https://afternoon-ravine-72981.herokuapp.com/changeUserData", method: .post, parameters: parameters)
             .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<ChangeUserDataResult>) in
                 switch response.result {
                 case .success(_): break
@@ -80,8 +117,14 @@ class ResponseCodableTests: XCTestCase {
     }
     
     func testProductAndParse() {
+        var parameters: Parameters? {
+            return [
+                "id_product": 123
+            ]
+        }
+        
         AF
-            .request("https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/getGoodById.json")
+            .request("https://afternoon-ravine-72981.herokuapp.com/getGoodById", method: .post, parameters: parameters)
             .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<ProductResult>) in
                 switch response.result {
                 case .success(_): break
@@ -94,9 +137,16 @@ class ResponseCodableTests: XCTestCase {
     }
     
     func testCatalogAndParse() {
+        var parameters: Parameters? {
+            return [
+                "page_number": 1,
+                "id_category": 1
+            ]
+        }
+        
         AF
-            .request("https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/catalogData.json")
-            .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<[ProductResult]>) in
+            .request("https://afternoon-ravine-72981.herokuapp.com/catalogData", method: .post, parameters: parameters)
+            .responseCodable(errorParser: errorParser) { [weak self] (response: AFDataResponse<CatalogResult>) in
                 switch response.result {
                 case .success(_): break
                 case .failure:

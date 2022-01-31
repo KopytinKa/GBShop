@@ -8,11 +8,13 @@
 import Foundation
 
 struct CatalogResult: Codable {
-    let pageNumber: Int
-    let products: [ProductResult]
+    let result: Int
+    let pageNumber: Int?
+    let products: [ProductModel]?
+    let errorMessage: String?
     
     enum CodingKeys: String, CodingKey {
-        case products
+        case products, result, errorMessage
         case pageNumber = "page_number"
     }
 }
