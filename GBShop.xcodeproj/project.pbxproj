@@ -44,6 +44,7 @@
 		8B6B5A19278F2E36006D4876 /* CatalogRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6B5A18278F2E36006D4876 /* CatalogRequestFactory.swift */; };
 		8B6B5A1B278F2E3E006D4876 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6B5A1A278F2E3E006D4876 /* Catalog.swift */; };
 		8B6B5A1D278F30BD006D4876 /* CatalogResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6B5A1C278F30BD006D4876 /* CatalogResult.swift */; };
+		8B6B5A1F279957EA006D4876 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6B5A1E279957EA006D4876 /* ProductModel.swift */; };
 		D4B4EF0973BCB3327D003107 /* Pods_GBShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C81C6E192F9534881CCF502 /* Pods_GBShop.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +110,7 @@
 		8B6B5A18278F2E36006D4876 /* CatalogRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogRequestFactory.swift; sourceTree = "<group>"; };
 		8B6B5A1A278F2E3E006D4876 /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 		8B6B5A1C278F30BD006D4876 /* CatalogResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogResult.swift; sourceTree = "<group>"; };
+		8B6B5A1E279957EA006D4876 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		974E66D796E6818A45211231 /* Pods-GBShopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShopTests.release.xcconfig"; path = "Target Support Files/Pods-GBShopTests/Pods-GBShopTests.release.xcconfig"; sourceTree = "<group>"; };
 		D1E2119B282054F083292D78 /* Pods-GBShop-GBShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShop-GBShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-GBShop-GBShopUITests/Pods-GBShop-GBShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E48DEC27938CA6FF4639CD83 /* Pods_GBShop_GBShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBShop_GBShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,6 +272,7 @@
 				8B496ACB2770E2A500A71F20 /* ChangeUserDataResult.swift */,
 				8B496AB82770CF9600A71F20 /* User.swift */,
 				8B496AD12770E59800A71F20 /* Gender.swift */,
+				8B6B5A1E279957EA006D4876 /* ProductModel.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				8B496AB52770CF4E00A71F20 /* RequestRouter.swift in Sources */,
 				8B496AB92770CF9600A71F20 /* User.swift in Sources */,
 				8B496ABE2770D06000A71F20 /* Auth.swift in Sources */,
+				8B6B5A1F279957EA006D4876 /* ProductModel.swift in Sources */,
 				8B6B5A13278F2B6F006D4876 /* ProductRequestFactory.swift in Sources */,
 				8B496ABC2770D00800A71F20 /* AuthRequestFactory.swift in Sources */,
 				8B496ACE2770E35300A71F20 /* ChangeUserDataRequestFactory.swift in Sources */,
